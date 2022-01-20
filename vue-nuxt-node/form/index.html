@@ -1,0 +1,58 @@
+
+    <div id='app'>
+
+        <h2>Variable: {{product}}</h2>
+
+        <hr/>
+
+        <h2>Array:</h2>
+
+        <ul>
+            <li v-for="product in products">
+                {{products}}
+            </li>
+        </ul>
+
+        <hr/>
+
+        <h2>Object: {{productObj.name}}</h2>
+
+        <hr/>
+
+        <h2>Array Object: </h2>
+
+        <ul>
+            <li v-for="product in products">
+                {{arrayProductObj}}
+            </li>
+        </ul>
+
+        <form action=""></form>
+            <input type="text" v-on:keyup.enter="nextPlease">
+            <input id="input2" type="text">
+        </form>
+
+
+    </div>
+    <div>
+        <button v-on:keyup.enter="nextPlease">Enviar</button>
+    </div>
+
+
+<script src="https://unpkg.com/vue@next"></script>
+<script>
+
+    const app = Vue.createApp({
+        data(){
+            return{
+                product:'Shirt',
+                products: ['Shirt','Jacket','Blaze'],
+                productObj: { name: 'Shirt', size: 10 },
+                arrayProductObj: [{ name: 'Jeans', size: 2 }, { name: 'Jacket', size: 12 }] 
+            }
+                
+        }
+    });
+
+    const mountedApp = app.mount('#app');
+</script>

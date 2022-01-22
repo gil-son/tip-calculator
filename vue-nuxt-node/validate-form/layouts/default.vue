@@ -112,6 +112,12 @@ export default {
           title: 'pageForm2',
           to: '/pageForm2'
         }
+        ,
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'pageForm3',
+          to: '/pageForm3'
+        }
       ],
       miniVariant: false,
       right: true,

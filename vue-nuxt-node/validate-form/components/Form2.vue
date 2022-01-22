@@ -14,10 +14,10 @@
     ></v-text-field>
 
     <v-text-field
-      v-model="sobrenome"
+      v-model="lastname"
       :counter="15"   
-      :rules="sobrenomeRules"  
-      label="Sobrenome"
+      :rules="lastnameRules"  
+      label="Lastname"
     ></v-text-field>
 
     <v-text-field
@@ -78,9 +78,9 @@ export default {
         v => !!v || 'Name is required',
         v => (v && v.length <= 10) || 'Name must be less than 10 characters',
       ],
-      sobrenome:'',
-      sobrenomeRules: [
-        v => !!v || 'Sobrenome is required',
+      lastname:'',
+      lastnameRules: [
+        v => !!v || 'lastname is required',
         v => (v && v.length <= 15) || 'Name must be less than 10 characters',
       ],
       email: '',

@@ -74,12 +74,14 @@
         type="email"
       ></v-text-field>
       <v-textarea
-        v-model="bio"
+        v-model="message"
+        :rules="messageRules"
         auto-grow
         filled
         color="deep-purple"
-        label="Bio"
+        label="Message"
         rows="1"
+        counter="250"
       ></v-textarea>
       <v-checkbox
         v-model="agreement"
@@ -106,13 +108,15 @@
         text
         @click="$refs.form.reset()"
       >
-        Format
+        
+        Clear
       </v-btn>
       <v-btn
+        id="idDoElemento"
         text
-        @click="$refs.form.reset()"
+        @click="format()"
       >
-        Clear
+        Format
       </v-btn>
       <v-spacer></v-spacer>
       <v-btn
@@ -120,6 +124,7 @@
         :loading="isLoading"
         class="white--text"
         color="deep-purple accent-4"
+        
         depressed
       >
         Submit
@@ -178,6 +183,18 @@
           'Password must contain an upper case letter, a numeric character, and a special character',
         required: v => !!v || 'This field is required',
       },
+      message: '',
+      messageRules: [
+        v => !!v || 'Message is required',
+        v => (v && v.length <= 250) || 'The message must be less than 250 characters',
+      ]
     }),
+    methods: {
+      format () {
+        let el = document.getElementById("idDoElemento");
+        console.log("Test: ",el.innerHTML.bold);
+
+      }
+    }
   }
 </script>
